@@ -1,22 +1,15 @@
 package com.example.luan.synthdecor
 
-import android.app.Activity
 import android.content.Context
-import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_home.*
-import android.support.v7.widget.Toolbar
 import android.content.Intent
+import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.widget.SearchView
+import android.support.v7.widget.*
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.Toast
 import com.example.luan.synthdecor.R.id.myhome
 
@@ -94,7 +87,7 @@ class HomeActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedLis
     // configuração do navigation Drawer com a toolbar
     private fun configuraMenuLateral() {
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
-        var menuLateral =  findViewById<DrawerLayout>(R.id.layoutMenuLateral)
+        var menuLateral = findViewById<DrawerLayout>(R.id.layoutMenuLateral)
 
         // ícone de menu (hamburger) para mostrar o menu
         var toogle = ActionBarDrawerToggle(this, menuLateral, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -117,6 +110,7 @@ class HomeActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedLis
         val intent_notification = Intent(context, NotificationActivity::class.java)
         val intent_myaccount = Intent(context, MyAccountActivity::class.java)
         val intent_orders = Intent(context, OrderActivity::class.java)
+        val intentFab = Intent(context, FloatingMenu::class.java)
 
         when (item.itemId) {
             R.id.myhome -> startActivityForResult(intent_home, 1)
@@ -124,9 +118,9 @@ class HomeActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedLis
             R.id.mycart -> startActivityForResult(intent_cart, 1)
             R.id.myorders -> startActivityForResult(intent_orders, 1)
             R.id.mynotifications -> startActivityForResult(intent_notification, 1)
+            R.id.fab -> startActivityForResult(intentFab, 1)
             R.id.botao_sair_app -> finish()
         }
-
 
 
         val drawer = findViewById<DrawerLayout>(R.id.layoutMenuLateral)
@@ -141,6 +135,7 @@ class HomeActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedLis
                     override fun onQueryTextChange(newText: String): Boolean {
                         return false
                     }
+
                     override fun onQueryTextSubmit(query: String): Boolean {
                         return false
                     }

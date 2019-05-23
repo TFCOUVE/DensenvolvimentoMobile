@@ -41,6 +41,7 @@
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme.Toolbar" />
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".FloatingMenu"></activity>
     </application>
 
 </manifest>
