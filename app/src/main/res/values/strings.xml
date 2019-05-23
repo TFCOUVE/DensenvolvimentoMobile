@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sete E Dez</string>
+    <string name="app_name">SynthDecor</string>
     <string name="mensagem_inicial">"Seja bem vindo ao APP da synth"</string>
     <string name="usuario">$usuario</string>
     <string name="title_activity_navigation_drawer">NavigationDrawer</string>
@@ -8,6 +8,5 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="message">Click on Floating Action Button</string>
+    <string name="action_settings">Settings</string>>
 </resources>
